@@ -15,11 +15,11 @@ class MainActivity : AppCompatActivity() {
         setContentView(binding.root)
 
         binding.btnLogin.setOnClickListener {
-
+            startActivity(Intent(this, LoginActivity::class.java))
         }
 
-        binding.btnSkip.setOnClickListener {
-
+        binding.btnRegister.setOnClickListener {
+            startActivity(Intent(this, RegisterActivity::class.java))
         }
     }
 }
