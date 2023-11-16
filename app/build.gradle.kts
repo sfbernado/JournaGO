@@ -3,16 +3,17 @@ plugins {
     id("org.jetbrains.kotlin.android")
 
     id("com.google.gms.google-services")
+    id("com.google.firebase.crashlytics")
 }
 
 android {
     namespace = "com.example.journalapp"
-    compileSdk = 33
+    compileSdk = 34
 
     defaultConfig {
         applicationId = "com.example.journalapp"
-        minSdk = 16
-        targetSdk = 33
+        minSdk = 19
+        targetSdk = 34
         versionCode = 1
         versionName = "1.0"
 
@@ -52,5 +53,9 @@ dependencies {
     androidTestImplementation("androidx.test.espresso:espresso-core:3.5.1")
 
     implementation(platform("com.google.firebase:firebase-bom:32.5.0"))
-    implementation("com.google.firebase:firebase-analytics")
+    implementation("com.google.firebase:firebase-analytics:21.5.0")
+    implementation("com.google.firebase:firebase-auth:22.2.0")
+    implementation("com.google.firebase:firebase-database:20.3.0")
+    implementation("com.google.firebase:firebase-crashlytics:18.5.1")
+    implementation("com.google.firebase:firebase-firestore:24.9.1")
 }
