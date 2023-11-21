@@ -26,8 +26,13 @@
     <color name="gold">#FFFFD700</color>
     <color name="khaki">#FFF0E68C</color>
 
-    <color name="primary">#3F51B5</color>
     <color name="primary_dark">#303F9F</color>
     <color name="primary_light">#C5CAE9</color>
     <color name="accent">#FF4081</color>
+
+    <!-- Text colors -->
+    <color name="primary">#3E59AD</color>
+    <color name="secondary">#B84083</color>
+
+
 </resources>

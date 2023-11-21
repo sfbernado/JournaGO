@@ -1,7 +1,10 @@
 <resources xmlns:tools="http://schemas.android.com/tools">
     <!-- Base application theme. -->
-    <style name="Base.Theme.JournalApp" parent="Theme.AppCompat.DayNight.NoActionBar">
+    <style name="Base.Theme.JournalApp" parent="Theme.AppCompat.Light.NoActionBar">
         <!-- Customize your dark theme here. -->
         <!-- <item name="colorPrimary">@color/my_dark_primary</item> -->
+        <item name="android:fontFamily">@font/poppins</item>
+        <!-- Status bar color -->
+        <item name="android:statusBarColor" tools:targetApi="l">@color/black</item>
     </style>
 </resources>
