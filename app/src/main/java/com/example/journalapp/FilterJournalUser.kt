@@ -2,17 +2,17 @@ package com.example.journalapp
 
 import android.widget.Filter
 
-class FilterCategory: Filter {
+class FilterJournalUser: Filter {
     //arraylist in which we want to search
-    private val filterList: ArrayList<ModelCategory>
+    var filterList: ArrayList<ModelJournal>
 
     //adapter in which filter need to be implemented
-    private var adapterCategory: AdapterCategory
+    var adapterJournalUser: AdapterJournalUser
 
     //constructor
-    constructor(filterList: ArrayList<ModelCategory>, adapterCategory: AdapterCategory): super() {
+    constructor(filterList: ArrayList<ModelJournal>, adapterJournalUser: AdapterJournalUser): super() {
         this.filterList = filterList
-        this.adapterCategory = adapterCategory
+        this.adapterJournalUser = adapterJournalUser
     }
 
     override fun performFiltering(constraint: CharSequence?): FilterResults {
@@ -22,15 +22,16 @@ class FilterCategory: Filter {
         val results = FilterResults()
         if (constraint != null && constraint.isNotEmpty()) {
             //search filed not empty, searching something, perform search
-            //change to upper case, to avoid case insensitive
-            constraint = constraint.toString().uppercase()
+            //change to lower case, to avoid case insensitive
+            constraint = constraint.toString().lowercase()
 
             //store our filtered list
-            val filteredModels = ArrayList<ModelCategory>()
+            val filteredModels = ArrayList<ModelJournal>()
 
             for (i in filterList.indices) {
                 //check, search by title and category
-                if (filterList[i].category.uppercase().contains(constraint)) {
+                if (filterList[i].title.lowercase().contains(constraint) ||
+                    filterList[i].description.lowercase().contains(constraint)) {
                     //add filtered data to list
                     filteredModels.add(filterList[i])
                 }
@@ -47,11 +48,12 @@ class FilterCategory: Filter {
         return results
     }
 
-    override fun publishResults(constraint: CharSequence, results: FilterResults) {
+    override fun publishResults(constraint: CharSequence?, results: FilterResults) {
         //apply filter changes
-        adapterCategory.categoryArrayList = results.values as ArrayList<ModelCategory>
+        adapterJournalUser.journalArrayList = results.values as ArrayList<ModelJournal>
 
         //refresh list
-        adapterCategory.notifyDataSetChanged()
+        adapterJournalUser.notifyDataSetChanged()
     }
+
 }

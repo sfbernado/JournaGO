@@ -1,25 +1,26 @@
 package com.example.journalapp
 
+import android.annotation.SuppressLint
 import android.app.ProgressDialog
 import android.content.Intent
-import android.content.pm.PackageManager
-import android.graphics.Paint
 import android.os.Build
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.os.Environment
-import android.text.Layout
 import android.util.Log
 import android.widget.Toast
-import androidx.activity.result.contract.ActivityResultContracts
-import androidx.core.content.ContextCompat
+import com.example.journalapp.Constants
+import com.example.journalapp.LoginActivity
+import com.example.journalapp.MyApplication
+import com.example.journalapp.R
+import com.example.journalapp.ViewJournalActivity
 import com.example.journalapp.databinding.ActivityDetailJournalBinding
+import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.database.DataSnapshot
 import com.google.firebase.database.DatabaseError
 import com.google.firebase.database.FirebaseDatabase
 import com.google.firebase.database.ValueEventListener
 import com.google.firebase.storage.FirebaseStorage
-import java.io.File
 import java.io.FileOutputStream
 
 class DetailJournalActivity : AppCompatActivity() {
@@ -27,6 +28,9 @@ class DetailJournalActivity : AppCompatActivity() {
 
     //view binding
     private lateinit var binding: ActivityDetailJournalBinding
+
+    //firebase auth
+    private lateinit var firebaseAuth: FirebaseAuth
 
     //progress dialog
     private lateinit var progressDialog: ProgressDialog
@@ -47,6 +51,9 @@ class DetailJournalActivity : AppCompatActivity() {
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
             getWindow().setStatusBarColor(getResources().getColor(R.color.black))
         }
+
+        //initialize firebase auth
+        firebaseAuth = FirebaseAuth.getInstance()
 
         //initialize progress dialog
         progressDialog = ProgressDialog(this)
@@ -160,8 +167,10 @@ class DetailJournalActivity : AppCompatActivity() {
                     MyApplication.loadCategory(categoryId, binding.tvJournalCategory)
 
                     //load journal thumbnail, page count
-                    MyApplication.loadJournalThumbnail(journalUrl, title, binding.pdfView,
-                        binding.progressBar, binding.tvJournalPages)
+                    MyApplication.loadJournalThumbnail(
+                        journalUrl, title, binding.pdfView,
+                        binding.progressBar, binding.tvJournalPages
+                    )
 
                     //load size
                     MyApplication.loadJournalSize(journalUrl, title, binding.tvJournalSize)

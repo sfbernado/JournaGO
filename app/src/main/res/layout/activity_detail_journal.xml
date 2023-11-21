@@ -321,11 +321,11 @@
             <Button
                 android:id="@+id/btnRead"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="20dp"
+                android:layout_height="match_parent"
                 android:background="@drawable/shape_btn1"
                 android:text="Read"
                 android:textAllCaps="true"
+                android:layout_marginTop="20dp"
                 android:textColor="@color/white"
                 android:textSize="16sp"
                 android:textStyle="bold" />

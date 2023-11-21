@@ -1,7 +1,6 @@
 package com.example.journalapp
 
 import android.app.AlertDialog
-import android.app.Application
 import android.app.ProgressDialog
 import android.content.Intent
 import android.net.Uri

@@ -1,13 +1,13 @@
 {
   "project_info": {
-    "project_number": "844882628264",
-    "project_id": "psi-journalapp",
-    "storage_bucket": "psi-journalapp.appspot.com"
+    "project_number": "118323393083",
+    "project_id": "psi-journalapp2",
+    "storage_bucket": "psi-journalapp2.appspot.com"
   },
   "client": [
     {
       "client_info": {
-        "mobilesdk_app_id": "1:844882628264:android:3974da540aa8c8f567bc9d",
+        "mobilesdk_app_id": "1:118323393083:android:879f8a6dabaed96b73a21e",
         "android_client_info": {
           "package_name": "com.example.journalapp"
         }
@@ -15,7 +15,7 @@
       "oauth_client": [],
       "api_key": [
         {
-          "current_key": "AIzaSyBrECOFugpZR2mLzsD7FE5tK5PaLxeRFUc"
+          "current_key": "AIzaSyDRllWDHbiVZAtv_1fCGC6lJopRFY2Kj2w"
         }
       ],
       "services": {

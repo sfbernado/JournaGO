@@ -82,7 +82,7 @@
                     android:layout_weight="1"
                     android:ellipsize="end"
                     android:textSize="10sp" />
-                
+
                 <TextView
                     android:id="@+id/tvDate"
                     android:layout_width="wrap_content"
@@ -95,7 +95,7 @@
                     android:layout_weight="1"
                     android:ellipsize="end"
                     android:textSize="10sp" />
-                
+
                 <TextView
                     android:id="@+id/tvCategory"
                     android:layout_width="wrap_content"
@@ -111,14 +111,6 @@
             </LinearLayout>
 
         </LinearLayout>
-
-        <ImageButton
-            android:id="@+id/ibMore"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:background="@android:color/transparent"
-            android:src="@drawable/ic_more_black"
-            tools:ignore="SpeakableTextPresentCheck,TouchTargetSizeCheck" />
 
     </LinearLayout>
 

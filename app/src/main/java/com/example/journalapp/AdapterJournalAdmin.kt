@@ -7,7 +7,6 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.Filter
 import android.widget.Filterable
-import android.widget.Toast
 import androidx.appcompat.app.AlertDialog
 import androidx.recyclerview.widget.RecyclerView
 import com.example.journalapp.databinding.RowJournalAdminBinding
@@ -66,7 +65,13 @@ class AdapterJournalAdmin: RecyclerView.Adapter<AdapterJournalAdmin.HolderJourna
         //load size
         MyApplication.loadJournalSize(journalUrl, title, holder.tvSize)
         //load page
-        MyApplication.loadJournalThumbnail(journalUrl, title, holder.pdfView, holder.progressBar, null)
+        MyApplication.loadJournalThumbnail(
+            journalUrl,
+            title,
+            holder.pdfView,
+            holder.progressBar,
+            null
+        )
         //load category
         MyApplication.loadCategory(categoryId, holder.tvCategory)
 
@@ -83,12 +88,11 @@ class AdapterJournalAdmin: RecyclerView.Adapter<AdapterJournalAdmin.HolderJourna
             intent.putExtra("journalId", journalId)
             context.startActivity(intent)
         }
-
     }
 
     private fun moreOptionsDialog(
         model: ModelJournal,
-        holder: AdapterJournalAdmin.HolderJournalAdmin
+        holder: HolderJournalAdmin
     ) {
         //get id, url, title of journal
         val journalId = model.id

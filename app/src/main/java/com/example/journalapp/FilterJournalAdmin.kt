@@ -51,7 +51,7 @@ class FilterJournalAdmin: Filter {
 
     override fun publishResults(constraint: CharSequence, results: FilterResults) {
         //apply filter changes
-        adapterJournalAdmin.journalArrayList = results!!.values as ArrayList<ModelJournal>
+        adapterJournalAdmin.journalArrayList = results.values as ArrayList<ModelJournal>
 
         //refresh list
         adapterJournalAdmin.notifyDataSetChanged()

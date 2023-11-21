@@ -18,6 +18,9 @@
         android:theme="@style/Theme.JournalApp"
         tools:targetApi="31">
         <activity
+            android:name=".ForgotPasswordActivity"
+            android:exported="false" />
+        <activity
             android:name=".ViewJournalActivity"
             android:exported="false"
             android:windowSoftInputMode="adjustNothing" />
@@ -65,7 +68,7 @@
             android:name=".SplashActivity"
             android:exported="true"
             android:screenOrientation="portrait"
-            android:windowSoftInputMode="adjustNothing" >
+            android:windowSoftInputMode="adjustNothing">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 

@@ -8,7 +8,6 @@ import android.text.TextWatcher
 import android.util.Log
 import android.widget.Toast
 import com.example.journalapp.databinding.ActivityJournalListAdminBinding
-import com.google.android.material.tabs.TabLayout.TabGravity
 import com.google.firebase.database.DataSnapshot
 import com.google.firebase.database.DatabaseError
 import com.google.firebase.database.FirebaseDatabase
